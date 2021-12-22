@@ -1,0 +1,26 @@
+.header {
+  position: fixed;
+  width: 100%;
+  padding-top: 40px;
+  background-color: #000;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  &__nav-item + &__nav-item {
+    margin-left: 30px;
+  }
+
+  &__nav-link {
+    color: #fff;
+    font-size: 14px;
+    line-height: 24px;
+    @extend %montserrat-regular;
+  }
+}

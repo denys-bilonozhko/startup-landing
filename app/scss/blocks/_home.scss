@@ -1,0 +1,50 @@
+.home {
+  margin: 0 auto;
+  background-color: #fff;
+  background-image: url('../../images/home-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+
+  &__inner {
+    padding: 310px 0 260px;
+    color: #fff;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 48px;
+    text-transform: uppercase;
+    @extend %montserrat-regular;
+
+    h1 {
+      display: inline;
+      font-weight: 400;
+      font-size: 48px;
+    }
+
+  }
+
+  &__subtitle {
+    margin-bottom: 64px;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    @extend %roboto-slab-regular;
+  }
+
+  &__button {
+    padding: 16px 30px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all .3s linear;
+    @extend %montserrat-regular;
+
+    &:hover {
+      background-color: #fff;
+      color: $orange;
+    }
+  }
+}

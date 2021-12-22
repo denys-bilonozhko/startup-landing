@@ -17,9 +17,30 @@
   }
 
   &__nav-link {
+    position: relative;
     color: #fff;
     font-size: 14px;
     line-height: 24px;
     @extend %montserrat-regular;
+
+    &::before {
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      content: '';
+      background-color: rgb(230, 230, 230);
+      transition: width ease-in-out 1s;
+    }
+
+    &:hover {
+     color: #dadada;
+    }
+
+    &:hover::before {
+      width: 100%;
+      transition: width ease-in-out 1s;
+    }
   }
 }

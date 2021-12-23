@@ -20,5 +20,8 @@
   },
   "browserslist": [
     "last 5 versions"
-  ]
+  ],
+  "dependencies": {
+    "@splidejs/splide": "^3.6.9"
+  }
 }

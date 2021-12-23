@@ -3,6 +3,11 @@
   width: 100%;
   padding-top: 40px;
 
+  &.black {
+    background-color: rgba(0, 0, 0, 0.856);
+    padding: 40px 0;
+  }
+
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -35,9 +40,10 @@
     }
 
     &:hover {
-     color: #dadada;
+      color: #dadada;
     }
 
+    &--active::before,
     &:hover::before {
       width: 100%;
       transition: width ease-in-out 1s;

@@ -39,13 +39,11 @@ function onScroll(e) {
   });
 }
 
-
 const links = document.querySelectorAll('.header__nav-link');
 
-links.forEach(function(link){
+links.forEach(function (link) {
   link.addEventListener('click', clickHandler);
 });
-
 
 function clickHandler(e) {
   e.preventDefault();
@@ -57,3 +55,9 @@ function clickHandler(e) {
     behavior: 'smooth',
   });
 }
+
+const mixer = mixitup('.works__list', {
+  animation: {
+    easing: 'ease-in-out',
+  },
+});

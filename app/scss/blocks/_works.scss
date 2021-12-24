@@ -1,0 +1,96 @@
+.works {
+  padding-bottom: 196px;
+
+  &__categories {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  &__category-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s linear;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-areas:
+      'a a a'
+      'a a a'
+      'a a a';
+    grid-gap: 30px;
+  }
+  
+  &__item {
+    position: relative;
+    max-width: 360px;
+  }
+
+  &__item:hover > &__info {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__image {
+  }
+
+  &__info {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($orange, 0.7);
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+
+  &__name {
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 24px;
+    @extend %montserrat-regular;
+  }
+  &__category {
+    font-size: 12px;
+    margin-bottom: 26px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    color: $orange;
+    text-transform: uppercase;
+    background-color: #fff;
+    @extend %montserrat-regular;
+    padding-right: 20px;
+    transition: all 0.2s linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &::after {
+      content: '';
+      background-image: url('../../images/icons/fa-angle-left.svg');
+      background-size: 12px 12px;
+      height: 12px;
+      width: 12px;
+      margin-top: -2px;
+      margin-left: 12px;
+    }
+  }
+}

@@ -59,10 +59,23 @@ links.forEach(function (link) {
   link.addEventListener('click', clickHandler);
 });
 
+const toggle = document.querySelector('.header__toggle');
+const nav = document.querySelector('.header__nav');
+
+toggle.addEventListener('click', function () {
+  nav.classList.toggle('open');
+});
+
+function closeMenu() {
+  nav.classList.remove('open');
+}
+
 function clickHandler(e) {
   e.preventDefault();
   const href = this.getAttribute('href');
   const offsetTop = document.querySelector(href).offsetTop;
+
+  closeMenu();
 
   scroll({
     top: offsetTop,
@@ -74,11 +87,4 @@ const mixer = mixitup('.works__list', {
   animation: {
     easing: 'ease-in-out',
   },
-});
-
-const toggle = document.querySelector('.header__toggle');
-const nav = document.querySelector('.header__nav');
-
-toggle.addEventListener('click', function () {
-  nav.classList.toggle('open');
 });

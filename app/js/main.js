@@ -53,7 +53,7 @@ function onScroll(e) {
   });
 }
 
-const links = document.querySelectorAll('.header__menu-link');
+const links = document.querySelectorAll('a[href^="#"]');
 
 links.forEach(function (link) {
   link.addEventListener('click', clickHandler);
@@ -77,12 +77,16 @@ window.addEventListener('resize', function () {
 function clickHandler(e) {
   e.preventDefault();
   const href = this.getAttribute('href');
-  const offsetTop = document.querySelector(href).offsetTop;
+  let offsetTop = document.querySelector(href).offsetTop;
 
   closeMenu();
 
+  if (document.body.clientWidth <= 1024) {
+    offsetTop -= 80;
+  }
+
   scroll({
-    top: offsetTop,
+    top: offsetTop - 20,
     behavior: 'smooth',
   });
 }

@@ -6,7 +6,7 @@ var splide = new Splide('.splide', {
   arrow: 'slider__arrow',
   pagination: false,
   breakpoints: {
-    1024: {
+    850: {
       perPage: 3,
     },
     600: {
@@ -69,6 +69,10 @@ toggle.addEventListener('click', function () {
 function closeMenu() {
   nav.classList.remove('open');
 }
+
+window.addEventListener('resize', function () {
+  closeMenu();
+});
 
 function clickHandler(e) {
   e.preventDefault();

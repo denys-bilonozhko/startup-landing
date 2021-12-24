@@ -13,17 +13,85 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 1024px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__nav {
+    @media screen and (max-width: 1024px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      transition: all 0.2s linear;
+      transform: translateY(-500px);
+    }
+
+    &.open {
+      transform: translateY(0px);
+    }
+  }
+
+  &__toggle {
+    z-index: 4;
+    display: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 1024px) {
+      display: block;
+    }
+  }
+
+  &__toggle div {
+    width: 35px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .change div:nth-child(1) {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .change div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .change div:nth-child(3) {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  &__menu {
     display: flex;
+
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      background-color: #000;
+    }
   }
 
-  &__nav-item + &__nav-item {
+  &__menu-item {
+    @media screen and (max-width: 1024px) {
+      padding: 15px;
+      text-align: center;
+    }
+  }
+
+  &__menu-item + &__menu-item {
     margin-left: 30px;
+
+    @media screen and (max-width: 1024px) {
+      margin-left: 0;
+    }
   }
 
-  &__nav-link {
+  &__menu-link {
     position: relative;
     color: #fff;
     font-size: 14px;

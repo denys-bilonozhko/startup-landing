@@ -1,11 +1,13 @@
 .header {
+  z-index: 3;
   position: fixed;
   width: 100%;
   padding-top: 40px;
+  transition: all 0.3s ease;
 
   &.black {
+    padding: 40px 0 26px;
     background-color: rgba(0, 0, 0, 0.856);
-    padding: 40px 0;
   }
 
   &__inner {

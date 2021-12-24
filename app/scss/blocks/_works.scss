@@ -8,9 +8,10 @@
   }
 
   &__category-button {
-    background-color: transparent;
     border: none;
+    color: #555;
     cursor: pointer;
+    background-color: transparent;
     transition: all 0.2s linear;
 
     &:hover {
@@ -26,7 +27,7 @@
       'a a a';
     grid-gap: 30px;
   }
-  
+
   &__item {
     position: relative;
     max-width: 360px;
@@ -35,9 +36,6 @@
   &__item:hover > &__info {
     opacity: 1;
     visibility: visible;
-  }
-
-  &__image {
   }
 
   &__info {

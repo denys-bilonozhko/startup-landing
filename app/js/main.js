@@ -2,9 +2,20 @@ var splide = new Splide('.splide', {
   perPage: 4,
   perMove: 1,
   rewind: true,
-
   gap: 30,
   arrow: 'slider__arrow',
+  pagination: false,
+  breakpoints: {
+    1024: {
+      perPage: 3,
+    },
+    600: {
+      perPage: 2,
+    },
+    452: {
+      perPage: 1,
+    },
+  },
 });
 
 splide.mount();

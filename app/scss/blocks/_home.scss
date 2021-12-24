@@ -1,15 +1,28 @@
 .home {
+  height: 100vh;
   margin: 0 auto;
   background-color: #fff;
   background-image: url('../../images/home-bg.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: top center;
+  background-size: cover;
+
+  & .container {
+    height: 100%;
+  }
 
   &__inner {
-    padding: 310px 0 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     color: #fff;
     text-align: center;
+
+    @media screen and (max-width: 1024px) {
+      padding: 100px 0;
+    }
   }
 
   &__title {
@@ -22,8 +35,15 @@
       display: inline;
       font-weight: 400;
       font-size: 48px;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 36px;
+      }
     }
 
+    @media screen and (max-width: 1024px) {
+      font-size: 36px;
+    }
   }
 
   &__subtitle {
@@ -32,6 +52,10 @@
     line-height: 24px;
     text-transform: capitalize;
     @extend %roboto-slab-regular;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 16px;
+    }
   }
 
   &__button {
@@ -39,12 +63,16 @@
     border: 2px solid #fff;
     color: #fff;
     text-transform: uppercase;
-    transition: all .3s linear;
+    transition: all 0.3s linear;
     @extend %montserrat-regular;
 
     &:hover {
       background-color: #fff;
       color: $orange;
     }
+  }
+
+  @media screen and (max-width: 1024px) {
+    height: auto;
   }
 }

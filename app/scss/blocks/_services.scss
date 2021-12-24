@@ -9,18 +9,37 @@
   &__subtitle {
     font-size: 16px;
     margin-top: 30px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 80px;
+    }
   }
 
   &__list {
     display: flex;
     justify-content: space-between;
     margin-top: 70px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+    }
   }
 
   &__item {
     padding: 0 8px;
     font-size: 14px;
     line-height: 24px;
+
+    @media screen and (max-width: 768px) {
+      text-align: justify;
+      max-width: 400px;
+
+      &:not(:last-child) {
+        margin-bottom: 80px;
+      }
+    }
   }
 
   &__image {
@@ -56,5 +75,7 @@
     margin-bottom: 25px;
     @extend %montserrat-regular;
     text-transform: uppercase;
+
+    text-align: center;
   }
 }

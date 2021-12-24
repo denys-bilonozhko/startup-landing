@@ -1,10 +1,23 @@
 .works {
   padding-bottom: 196px;
 
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 80px;
+  }
+
   &__categories {
     margin-top: 30px;
     text-align: center;
     margin-bottom: 70px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: 450px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__category-button {
@@ -17,6 +30,16 @@
     &:hover {
       color: $orange;
     }
+
+    @media screen and (max-width: 450px) {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &.mixitup-control-active {
+      color: $orange;
+    }
   }
 
   &__list {
@@ -26,6 +49,30 @@
       'a a a'
       'a a a';
     grid-gap: 30px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-areas:
+        'a a'
+        'a a'
+        'a a'
+        'a a';
+      grid-gap: 10px;
+    }
+
+    @media screen and (max-width: 550px) {
+      grid-template-areas:
+        'a'
+        'a'
+        'a'
+        'a'
+        'a'
+        'a'
+        'a'
+        'a'
+        'a';
+      justify-content: center;
+      grid-gap: 20px;
+    }
   }
 
   &__item {
@@ -33,15 +80,14 @@
     max-width: 360px;
   }
 
-  &__item:hover > &__info {
+  &__item:hover > &__info,
+  &__item:hover &__link {
     opacity: 1;
     visibility: visible;
   }
 
   &__info {
-    color: #fff;
     display: flex;
-    flex-direction: column;
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -49,8 +95,10 @@
     right: 0;
     bottom: 0;
     left: 0;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fff;
     background-color: rgba($orange, 0.7);
     transition: visibility 0s, opacity 0.5s linear;
   }
@@ -68,27 +116,29 @@
 
   &__link {
     display: flex;
+    opacity: 0;
+    visibility: hidden;
     align-items: center;
     padding: 16px 24px;
+    padding-right: 20px;
     color: $orange;
     text-transform: uppercase;
     background-color: #fff;
-    @extend %montserrat-regular;
-    padding-right: 20px;
     transition: all 0.2s linear;
+    @extend %montserrat-regular;
 
     &:hover {
       transform: scale(1.1);
     }
 
     &::after {
+      width: 12px;
+      height: 12px;
+      margin-top: -2px;
+      margin-left: 12px;
       content: '';
       background-image: url('../../images/icons/fa-angle-left.svg');
       background-size: 12px 12px;
-      height: 12px;
-      width: 12px;
-      margin-top: -2px;
-      margin-left: 12px;
     }
   }
 }

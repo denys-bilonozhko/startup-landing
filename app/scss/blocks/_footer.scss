@@ -2,6 +2,18 @@
   padding: 100px 0 88px;
   background-color: $orange;
 
+  @media screen and (max-width: 1024px) {
+    padding: 80px 0 64px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 60px 0 44px;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 30px 0 22px;
+  }
+
   &__menu {
     display: flex;
     justify-content: center;
@@ -15,14 +27,14 @@
       margin-left: 14px;
     }
     &-link {
-      width: 35px;
-      height: 35px;
       display: block;
-      border: 1px solid #fff;
-      border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 35px;
+      height: 35px;
+      border: 1px solid #fff;
+      border-radius: 50%;
 
       img {
         width: 15px;
@@ -52,5 +64,9 @@
     font-size: 12px;
     text-align: center;
     text-transform: uppercase;
+
+    @media screen and (max-width: 1024px) {
+      margin-top: 40px;
+    }
   }
 }

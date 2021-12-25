@@ -5,6 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const del = require('del');
 const browserSync = require('browser-sync').create();
+const imagemin = require('gulp-imagemin');
 
 function browsersync() {
   browserSync.init({
@@ -32,11 +33,6 @@ function styles() {
 
 function scripts() {
   return src([
-    // 'node_modules/jquery/dist/jquery.js',
-    // 'node_modules/slick-carousel/slick/slick.js',
-    // 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
-    // 'node_modules/rateyo/src/jquery.rateyo.js',
-    // 'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
     'node_modules/@splidejs/splide/dist/js/splide.min.js',
     'node_modules/mixitup/dist/mixitup.min.js',
     'app/js/main.js',
@@ -48,7 +44,19 @@ function scripts() {
 }
 
 function images() {
-  return src('app/images/**/*.*').pipe(dest('dist/images'));
+  return src('app/images/**/*.*')
+      .pipe(imagemin([
+          imagemin.gifsicle({ interlaced: true }),
+          imagemin.mozjpeg({ quality: 75, progressive: true }),
+          imagemin.optipng({ optimizationLevel: 5 }),
+          imagemin.svgo({
+              plugins: [
+                  { removeViewBox: true },
+                  { cleanupIDs: false }
+              ]
+          })
+      ]))
+      .pipe(dest('dist/images'));
 }
 
 function fonts(){

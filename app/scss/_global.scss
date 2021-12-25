@@ -15,22 +15,3 @@ section {
   }
 }
 
-h2 {
-  position: relative;
-  padding-bottom: 30px;
-  font-size: 20px;
-  line-height: 24px;
-  text-transform: uppercase;
-  @extend %montserrat-regular;
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 2px;
-    background-color: #555555;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-  }
-}

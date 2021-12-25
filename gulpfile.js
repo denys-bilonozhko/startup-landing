@@ -51,6 +51,11 @@ function images() {
   return src('app/images/**/*.*').pipe(dest('dist/images'));
 }
 
+function fonts(){
+  return src('app/fonts/**/*.*')
+  .pipe(dest('dist/fonts'))
+}
+
 function build() {
   return src(['app/**/*.html', 'app/css/style.min.css', 'app/js/main.min.js'], {
     base: 'app',
@@ -75,5 +80,5 @@ exports.watching = watching;
 exports.build = build;
 exports.cleanDist = cleanDist;
 
-exports.build = series(cleanDist, images, build);
+exports.build = series(cleanDist, images, fonts, build);
 exports.default = parallel(styles, scripts, browsersync, watching);
